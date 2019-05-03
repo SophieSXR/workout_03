@@ -1,0 +1,16 @@
+Package: binomial
+Type: Package
+Title: Binomial Distribution
+Version: 0.1.0
+Author: Xinran Song
+Maintainer: Xinran Song <songxr@berkeley.edu>
+Description: It is the theoretical probability model that we use when calculating probabilities about the number of successes in a fixed number of random trials performed under identical conditions.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1

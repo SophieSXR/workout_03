@@ -1,0 +1,77 @@
+---
+title: "Getting Started with binomial"
+author: "Xinran Song"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Getting started with binomial
+
+First, load the package.
+```{r}
+library(binomial)
+```
+
+Binomial distribution is the theoretical probability model we use when calculating probabilities about the number of successes in a fixed number of random trials performed under identical conditions (assuming a constant probability of success on each trial).
+
+
+## Binomial choose
+
+The first step is to calculates the number of combinations in which $k$ successes can occur in $n$ trials.
+
+```{r}
+bin_choose(n = 5, k = 2)
+```
+
+## Binomial Probability
+
+Then, we can calculate the probability in which $k$ successes can occur in $n$ trials with the probability of success. In this process, the function takes three arguments: success, trials, and prob.
+
+```{r}
+# probability of getting 2 successes in 5 trials
+# (assuming prob of success = 0.5) 
+bin_probability(success = 2, trials = 5, prob = 0.5)
+```
+
+## Binomial Distribution
+
+When we calculate the binomial distribution, we get a data frame with class `"bindis","data.frame"`.
+
+```{r}
+bin_distribution(trials=5, prob = 0.5)
+```
+
+The `plot()` function gives you a barplot of the distribution:
+```{r}
+dis1 <- bin_distribution(trials = 5, prob = 0.5)
+plot(dis1)
+```
+
+## Binomial Cumulative
+
+`bin_cumulative()` calculates the cumulative probability of a binomial distribution. The output is a data frame with class `"bincum","data.frame"`.
+
+```{r}
+bin_cumulative(trials=5, prob = 0.5)
+```
+
+The `plot()` function gives you a line plot of the cumulative distribution:
+```{r}
+dis2 <- bin_cumulative(trials = 5, prob = 0.5)
+plot(dis2)
+```
+
+
+
+
